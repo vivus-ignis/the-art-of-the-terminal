@@ -1,0 +1,14 @@
+.p
+1,$p
+,p
+,n
+/req
+g/req/p
+s/version = "0.1.0"/version = "0.1.1"/
+g/.*= \"^.*\"/p
+,s/poetry/prose/g
+r !date '+\%Y'
+s/^/# Copyright (c) /p
+s/$/ The Art Of The Terminal/p
+.m0 
+w pyproject-new.toml

@@ -1,0 +1,5 @@
+r !date '+\%Y'
+s/^/# Copyright (c) /
+s/$/ The Art Of The Terminal/
+.m0 
+w
