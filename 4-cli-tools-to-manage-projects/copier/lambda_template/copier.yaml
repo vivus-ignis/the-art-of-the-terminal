@@ -1,0 +1,3 @@
+lambda_name:
+  type: str
+  help: What is your lambda function name?

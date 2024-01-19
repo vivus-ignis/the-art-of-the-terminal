@@ -1,0 +1,21 @@
+session: aws-amplify
+
+windows:
+  - name: webserver
+    commands:
+      - amplify serve
+  - name: code editor
+    commands:
+      - nvim .
+  - name: dynamodb shell
+    # https://github.com/awslabs/dynamodb-shell
+    commands:
+      - awsddbsh
+  - name: amplify cli
+    # this will open AWS Amplify Studio in your browser
+    commands:
+      - amplify console api
+  - name: cloudwatch logs
+    # https://github.com/lucagrulla/cw
+    commands:
+      - cw tail -l -f /aws/appsync/apis/$LOG_GROUP

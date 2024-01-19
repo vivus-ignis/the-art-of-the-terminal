@@ -1,0 +1,107 @@
+################################################################################
+# 1. defining a recipe with a comment
+################################################################################
+
+# run all linters
+test:
+  npx mega-linter-runner --flavor cupcake
+
+################################################################################
+# 2. using variables
+################################################################################
+
+SMUG_VERSION := "0.3.3"
+
+# installs smug session manager
+install-smug:
+  wget -c https://github.com/ivaaaan/smug/releases/download/v{{SMUG_VERSION}}/smug_{{SMUG_VERSION}}_Linux_x86_64.tar.gz
+  mkdir -p smug
+  tar -xzf smug_{{SMUG_VERSION}}_Linux_x86_64.tar.gz -C ./smug
+  mv smug/smug $HOME/bin
+  rm -rf smug
+
+################################################################################
+# 3. look ma, no subshell!
+################################################################################
+
+# demonstrates makefile behavior with a subshell for each line in a target
+makefile-behavior:
+  var=foo
+  echo "var is '$var'"
+
+# demonstrates script-like justfile behavior
+script-behavior:
+  #!/bin/sh
+  var=foo
+  echo "var is '$var'"
+
+makefile-multiline:
+  #!/bin/bash
+  set -eu -o pipefail
+  for res in `awk -F':' '{if($NF ~ /sh$/ && $6 != "")printf $1":"$6"\n"}' /etc/passwd`; do
+    user=`echo $res | awk -F: '{print $1}'`
+    homedir=`echo $res | awk -F: '{print $2}'`
+    if [ -s ${homedir}/.bash_history ]; then
+      echo "Has to be cleaned: ${homedir}/.bash_history"
+    fi
+  done
+
+################################################################################
+# 4. not just (ba)sh
+################################################################################
+
+tcl-multiline:
+  #!/usr/bin/tclsh
+  set f [open "/etc/passwd" r]
+  while {[gets $f line] != -1} {
+    set fields [split $line ":"]
+    set user [lindex $fields 0]
+    set homedir [lindex $fields 5]
+    if {[file exists "${homedir}/.bash_history"] && [file size "${homedir}/.bash_history"] > 0} {
+      puts "Has to be cleaned: ${homedir}/.bash_history"
+    }
+  }
+  close $f
+
+################################################################################
+# 5. recipes with parameters; dependencies; private recipes
+################################################################################
+
+# create a new lambda project from a template
+new-lambda lambda_name: (create-lambda-project lambda_name) (venv-lambda lambda_name)
+
+[private]
+create-lambda-project lambda_name:
+  copier copy \
+    -d lambda_name={{lambda_name}} \
+    ../copier/lambda_template .
+
+[private]
+venv-lambda lambda_name: (deps-lambda lambda_name)
+  #!/usr/bin/env bash
+  set -e
+  cd {{lambda_name}}
+  python3 -mvenv .venv
+  . .venv/bin/activate
+  pip install -r requirements.txt
+
+# generate requirements.txt from requirements.in
+deps-lambda lambda_name:
+  cd {{lambda_name}} && pip-compile
+
+[private]
+build-lambda lambda_name:
+  docker build \
+    -t lambda-{{lambda_name}} \
+    -f {{lambda_name}}/Dockerfile {{lambda_name}}
+
+# run lambda locally in docker
+local-run-lambda lambda_name: (build-lambda lambda_name)
+  docker run -p 9000:8080 --rm lambda-{{lambda_name}}
+
+# invoke local lambda
+local-invoke-lambda:
+  curl -v \
+    -X POST \
+    -d '{}' \
+    "http://localhost:9000/2015-03-31/functions/function/invocations"

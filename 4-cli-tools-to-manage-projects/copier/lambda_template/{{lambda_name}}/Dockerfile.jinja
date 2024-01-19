@@ -1,0 +1,5 @@
+FROM public.ecr.aws/lambda/python:3.11.2023.09.18.16
+COPY requirements.txt /tmp/
+RUN pip install --target ${LAMBDA_TASK_ROOT} -r /tmp/requirements.txt
+COPY index.py ${LAMBDA_TASK_ROOT}/{{lambda_name}}.py
+CMD [ "{{lambda_name}}.lambda_handler" ]
