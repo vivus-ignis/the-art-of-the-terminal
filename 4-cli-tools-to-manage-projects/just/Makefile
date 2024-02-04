@@ -1,3 +1,6 @@
+kubectl-top:
+	watch -d -n 1 'kubectl top pods -n myapp'
+
 makefile-multiline:
 # this code shows bash history files for all users on the system that have a login shell
 # (in the real project it was actually truncating those files)
@@ -7,4 +10,4 @@ makefile-multiline:
 	  if [ -s $${homedir}/.bash_history ]; then echo "Has to be cleaned: $${homedir}/.bash_history" ; fi ; \
 	done
 
-.PHONY: makefile-multiline test clean all
+.PHONY: kubectl-top makefile-multiline test clean all

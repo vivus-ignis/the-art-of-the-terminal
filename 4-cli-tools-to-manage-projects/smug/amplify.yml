@@ -10,7 +10,7 @@ windows:
   - name: dynamodb shell
     # https://github.com/awslabs/dynamodb-shell
     commands:
-      - awsddbsh
+      - ddbsh
   - name: amplify cli
     # this will open AWS Amplify Studio in your browser
     commands:
