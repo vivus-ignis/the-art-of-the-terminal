@@ -1,0 +1,42 @@
+# Wait... PostgreSQL can do WHAT?
+
+- Development environment setup
+	- PostgreSQL version manager: https://github.com/theory/pgenv
+	- Control PostgreSQL server from python code: https://github.com/orm011/pgserver/
+	- CLI client with autocomplete and syntax highlighting: https://github.com/dbcli/pgcli
+	- Extensions manager: https://tembo-io.github.io/trunk/
+- PostgreSQL is enough: https://gist.github.com/cpursley/c8fb81fe8a7e5df038158bdfe0f06dbb
+- PostgreSQL extensions
+	- Message queue: https://github.com/tembo-io/pgmq
+    - Cryptographic functions: https://www.postgresql.org/docs/current/pgcrypto.html
+    - JSON Web Token generation: https://github.com/michelp/pgjwt
+    - https://github.com/AbdulYadi/pgqr
+    - Data anonymizer: https://labs.dalibo.com/postgresql_anonymizer
+    - Templates rendering: https://github.com/mkaski/pg_render
+    - HTTP client: https://github.com/pramsey/pgsql-http
+    - Another HTTP client: https://github.com/supabase/pg_net
+    - One more HTTP client: https://github.com/RekGRpth/pg_curl
+- PostgreSQL is the most popular database in 2023: https://survey.stackoverflow.co/2023/#most-popular-technologies-database
+- Datetime datatypes: https://www.postgresql.org/docs/current/datatype-datetime.html
+- Network datatypes: https://www.postgresql.org/docs/current/datatype-net-types.html
+- Geometric datatypes: https://www.postgresql.org/docs/current/datatype-geometric.html
+- Supported languages: https://wiki.postgresql.org/wiki/PL_Matrix
+- LISTEN: https://www.postgresql.org/docs/current/sql-listen.html
+- NOTIFY: https://www.postgresql.org/docs/current/sql-notify.html
+- How and why Prequel replaced Rabbitmq with PostgreSQL https://www.prequel.co/blog/sql-maxis-why-we-ditched-rabbitmq-and-replaced-it-with-a-postgres-queue
+- How and why The Guardian replaced MongoDB with PostgreSQL: https://www.theguardian.com/info/2018/nov/30/bye-bye-mongo-hello-postgres
+- JSON in PostgreSQL: https://scalegrid.io/blog/using-jsonb-in-postgresql-how-to-effectively-store-index-json-data-in-postgresql/
+- Graph DB: https://age.apache.org/
+- https://youtu.be/cN3h7bgCg_s?t=281
+- https://blog.blockost.com/why-we-replaced-elasticsearch-with-postgres-full-text-search
+- Limitations of full-text search: https://www.postgresql.org/docs/current/textsearch-limitations.html
+- Chatbots inside the database: https://postgresml.org/chatbot
+- No-code REST API: https://github.com/PostgREST/postgrest
+- Unit tests for the database: https://pgtap.org/
+- No-code GraphQL API: https://supabase.github.io/pg_graphql/
+- PostgreSQL as a platform: https://github.com/omnigres/omnigres
+- Why replacing all your backend with just PostgreSQL may be a good idea
+    - https://boringtechnology.club/
+    - https://www.radicalsimpli.city/
+- Doom running inside of PostgreSQL: https://github.com/DreamNik/pg_doom
+- How pg_doom works: https://prog.world/running-doom-inside-postgresql/
