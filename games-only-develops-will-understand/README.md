@@ -8,7 +8,7 @@
 - solve a mystery by using sql https://github.com/jeff-haddock/carmen-sandiego-sql-game
 - minecraft-like haskell-inspired coding game https://github.com/swarm-game/swarm
     - commands https://github.com/swarm-game/swarm/wiki/Commands-Cheat-Sheet
-    - things https://github.com/swarm-game/swarm/wiki/Entities-cheat-sheet#lambda
+    - things https://github.com/swarm-game/swarm/wiki/Entities-cheat-sheet
     - crafting https://github.com/swarm-game/swarm/wiki/Recipes-cheat-sheet
 
 ### swarm on debian
