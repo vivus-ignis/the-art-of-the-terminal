@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+authors = ["vboxuser"]
+description = ""
+name = "quotes"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "quotes"
+
+[component.quotes]
+source = "app.wasm"
+files = [ "quotes.json" ]
+[component.quotes.build]
+command = "componentize-py -w spin-http componentize app -o app.wasm"
+watch = ["*.py", "requirements.txt"]
