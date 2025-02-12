@@ -1,0 +1,13 @@
+# want to learn more about "just"?
+# check out my video "Essential CLI Tools For Code Projects" https://youtu.be/OYl-wrsMGZo
+
+set dotenv-required
+set dotenv-load
+
+run: start-redis
+  gawk -f ./bot.awk
+
+[private]
+start-redis:
+  docker ps --format "table {{{{.Image}}" | grep -q '^redis$' \
+  || docker run -d -p 6379:6379 redis
