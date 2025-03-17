@@ -1,0 +1,69 @@
+SSH_KEY := "~/.ssh/age"
+PROJECT_NAME := "trumpize"
+
+edit:
+  cd app && poetry run nvim app.py
+
+dev:
+  docker compose -p {{PROJECT_NAME}} up --build
+
+run:
+  docker compose -p {{PROJECT_NAME}} -f docker-compose-prod.yml up --build
+
+run-bg:
+  docker compose -p {{PROJECT_NAME}} -f docker-compose-prod.yml up --build -d
+
+stop:
+  docker compose -p {{PROJECT_NAME}} down
+
+deploy:
+  docker deploy -p {{PROJECT_NAME}} \
+    -f docker-compose-prod.yml \
+    --build \
+    --force-recreate \
+    --wait app
+
+clean:
+  docker compose -p {{PROJECT_NAME}} down -v
+  docker compose -p {{PROJECT_NAME}} -f docker-compose-prod.yml down -v
+  docker system prune
+
+psql:
+  docker compose exec -u postgres db psql
+
+decrypt-secrets:
+  #!/bin/bash
+  mkdir -p secrets
+  for f in ./secrets_encrypted/*; do
+    echo "Decrypting $f..."
+    age -d -i {{SSH_KEY}} ${f} > ./secrets/`basename ${f}`
+  done
+
+lint:
+  #!/bin/bash
+  for f in `find ./ -name Dockerfile`; do
+    echo "*** Checking $f..."
+    docker run --rm -i hadolint/hadolint < $f
+    [ $? -ne 0 ] && hadolint_status=$?
+  done
+
+  echo "--------------------------------------------------------------------------------"
+
+  for image in `awk '/image:/ {print $2}' docker-compose.yml docker-compose-prod.yml; \
+                docker images | awk '/{{PROJECT_NAME}}/ {print $1":"$2}' \
+                | sort -s | uniq`; do
+    echo "*** Scanning docker image $image..."
+    docker run --rm aquasec/trivy:0.60.0 image \
+      --quiet \
+      --scanners vuln \
+      --table-mode summary \
+      --severity HIGH,CRITICAL \
+      --ignore-unfixed $image
+  done
+
+  if [ $? -ne 0 ] || [ $hadolint_status -ne 0 ]; then
+    echo "///////////////////////////////////////////////////////////////////////////////"
+    echo "/////////////////... Issues found. Check the output above. .../////////////////"
+    echo "///////////////////////////////////////////////////////////////////////////////"
+    exit 1
+  fi
