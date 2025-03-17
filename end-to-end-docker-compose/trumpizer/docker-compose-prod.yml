@@ -1,0 +1,87 @@
+services:
+  app:
+    build:
+      context: ./app
+      args:
+        UID: 1000
+        GID: 1000
+    command: poetry run uvicorn --host 0.0.0.0 app:app
+    secrets:
+      - postgres_password
+      - openai_token
+    environment:
+      OPENAI_TOKEN_FILE: /run/secrets/openai_token
+      DB_PASSWORD_FILE: /run/secrets/postgres_password
+      DB_USER: postgres
+      DB_HOST: db
+    networks:
+      - ingress
+      - private
+    labels:
+      caddy: trumpize.the-art-of-the-terminal.com
+      caddy.reverse_proxy: "{{upstreams 8000}}"
+      caddy.tls: force_automate
+      # caddy.tls.ca: https://acme-staging-v02.api.letsencrypt.org/directory
+      caddy.reverse_proxy.health_uri: "/health"
+      caddy.reverse_proxy.health_port: "8000" 
+      deunhealth.restart.on.unhealthy: "true"
+    deploy:
+      mode: replicated
+      replicas: 2
+      update_config:
+        order: start-first
+    restart: always
+    healthcheck:
+      test: curl -f http://localhost:8000/health || exit 1
+      interval: 5s
+      timeout: 5s
+      retries: 3
+      start_interval: 20s
+
+  proxy:
+    image: lucaslorentz/caddy-docker-proxy:2.9.2-alpine
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      CADDY_INGRESS_NETWORKS: trumpize_ingress # network name should start with the project prefix !!!
+    networks:
+      - ingress
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - caddy_data:/data
+    restart: always
+
+  db:
+    image: postgres:17.4-bookworm
+    secrets:
+      - postgres_password
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - private
+    restart: always
+
+  deunhealth:
+    image: qmcgaw/deunhealth:v0.3.0
+    network_mode: "none"
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+networks:
+  ingress: {}
+  private: {}
+
+volumes:
+  postgres: {}
+  caddy_data: {}
+
+secrets:
+  postgres_password:
+    file: ./secrets/pg_password.txt
+  openai_token:
+    file: ./secrets/openai_token.txt
+# configs:

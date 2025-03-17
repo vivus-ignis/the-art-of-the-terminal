@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-theme="dim">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trumpizer v0.1</title>
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs-fetch@latest/dist/api.min.js"
+    ></script>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+  </head>
+  <body>
+    <div
+      x-data="{ translationInProgress: false, inputPhrase: '', translationResults: {} }"
+      class="hero bg-base-200 min-h-screen grid grid-cols-1 grid-rows-2 gap-4"
+    >
+      <div class="hero-content flex-col lg:flex-row">
+        <img
+          x-show="!translationInProgress"
+          src="/img/trump-waiting.png"
+          alt="Trump Waiting"
+        />
+        <img
+          x-show="translationInProgress"
+          x-cloak
+          src="/img/trump-in-progress.gif"
+          alt="Trump Loading"
+        />
+        <div>
+          <form id="translationForm" @submit.prevent>
+            <div>
+              <textarea
+                class="textarea textarea-primary textarea-bordered textarea-lg w-full max-w-xs join-item"
+                placeholder="Enter a phrase to trumpize"
+                x-model="inputPhrase"
+              ></textarea>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                @click="translationInProgress = true; 
+                          translationResults = await $post('/api/trump', 
+                                                           {phrase: inputPhrase}, 
+                                                           {headers: {
+                                                             'Content-Type': 'application/json'
+                                                             }
+                                                           }); 
+                          translationInProgress = false"
+              >
+                Trumpize It!
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div
+        class="card bg-base-100 w-96 shadow-xl"
+        x-show="translationResults.converted_phrase"
+        x-cloak
+      >
+        <div class="card-body">
+          <div class="card-actions justify-end">
+            <button
+              class="btn btn-square btn-sm"
+              @click="translationResults = {}"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <h2 class="card-title">Speech is ready!</h2>
+          <p x-text="translationResults.converted_phrase"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
