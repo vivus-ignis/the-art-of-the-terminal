@@ -1,0 +1,57 @@
+--- agentredrabbit.py	2025-03-07 20:42:40.434221000 +0100
++++ agentredrabbit.py.new	2025-03-11 19:38:47.498364000 +0100
+@@ -11,12 +11,12 @@
+ import sys
+ import threading
+ 
+-from __init__ import __version__
++from .__init__ import __version__
+ 
+-from config import ReadConfig
+-from utils import log_format
+-from transport import Transporter
+-from transport import setFailsafeQueue, getFailsafeQueue
++from .config import ReadConfig
++from .utils import log_format
++from .transport import Transporter
++from .transport import setFailsafeQueue, getFailsafeQueue
+ from optparse import OptionParser
+ 
+ log = logging.getLogger(__name__)
+@@ -71,8 +71,7 @@
+     if options.verbose:
+         log_level = logging.DEBUG
+ 
+-    logging.basicConfig(filename=config["log_file"], filemode="a",
+-                        level=log_level, format=log_format)
++    logging.basicConfig(level=log_level, format=log_format)
+     logging.getLogger("pika").setLevel(logging.INFO)
+ 
+     # Setup signal handlers
+@@ -81,7 +80,7 @@
+     signal.signal(signal.SIGQUIT, sighandler)
+     signal.signal(signal.SIGHUP, sighandler)
+ 
+-    queues = filter(lambda x: x.strip() != "", config["queues"].split(":"))
++    queues = list(filter(lambda x: x.strip() != "", config["queues"].split(":")))
+ 
+     # Failsafe queue handling
+     failsafeq = {}
+@@ -92,7 +91,7 @@
+             failsafeq = pickle.load(dumpfile)
+             log.info("Loaded failsafeq: " + str(failsafeq))
+     for queue in queues:
+-        if not queue in failsafeq:
++        if queue not in failsafeq:
+             failsafeq[queue] = []
+     setFailsafeQueue(failsafeq)
+ 
+@@ -117,7 +116,7 @@
+         dumpfile = open(dumpfilename, "wb")
+         pickle.dump(getFailsafeQueue(), dumpfile)
+         dumpfile.close()
+-    except IOError, err:
++    except IOError as err:
+         log.error("Dumpiing failsafe queue failed: %s", err)
+     log.info("We had a clean shutdown, Bye!")
+     sys.exit(0)

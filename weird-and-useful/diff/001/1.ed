@@ -1,0 +1,21 @@
+120c
+    except IOError as err:
+.
+95c
+        if queue not in failsafeq:
+.
+84c
+    queues = list(filter(lambda x: x.strip() != "", config["queues"].split(":")))
+.
+74,75c
+    logging.basicConfig(level=log_level, format=log_format)
+.
+16,19c
+from .config import ReadConfig
+from .utils import log_format
+from .transport import Transporter
+from .transport import setFailsafeQueue, getFailsafeQueue
+.
+14c
+from .__init__ import __version__
+.
