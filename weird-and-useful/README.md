@@ -10,3 +10,8 @@
 - list processing functions, p. 17 https://www.cs.stir.ac.uk/~kjt/research/pdf/expl-m4.pdf
 - m4-based static website generators
 	- https://git.sr.ht/~demifiend/m4-website
+    - https://github.com/chrisman/m4-blog
+    - https://github.com/iandstanley/m4staticsite
+    - https://github.com/Lecrapouille/WebSiteGenerator
+    - https://github.com/thesavo/m4-bakery -
+    - https://github.com/uzsolt/wpwmm4
