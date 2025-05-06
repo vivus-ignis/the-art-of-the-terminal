@@ -7,7 +7,7 @@
 	- Extensions manager: https://tembo-io.github.io/trunk/
 - PostgreSQL is enough: https://gist.github.com/cpursley/c8fb81fe8a7e5df038158bdfe0f06dbb
 - PostgreSQL extensions
-	- Message queue: https://github.com/tembo-io/pgmq
+    - Message queue: https://github.com/tembo-io/pgmq
     - Cryptographic functions: https://www.postgresql.org/docs/current/pgcrypto.html
     - JSON Web Token generation: https://github.com/michelp/pgjwt
     - https://github.com/AbdulYadi/pgqr
@@ -16,6 +16,7 @@
     - HTTP client: https://github.com/pramsey/pgsql-http
     - Another HTTP client: https://github.com/supabase/pg_net
     - One more HTTP client: https://github.com/RekGRpth/pg_curl
+    - Vector store (e.g. for embeddings for RAG): https://github.com/pgvector/pgvector
 - PostgreSQL is the most popular database in 2023: https://survey.stackoverflow.co/2023/#most-popular-technologies-database
 - Datetime datatypes: https://www.postgresql.org/docs/current/datatype-datetime.html
 - Network datatypes: https://www.postgresql.org/docs/current/datatype-net-types.html
