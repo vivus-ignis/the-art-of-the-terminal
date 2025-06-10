@@ -2,7 +2,7 @@
 
 | Clickable Thumbnail | Episode materials |
 |------------|-----------|
-| <a href="https://youtu.be/zPP5gCp46FM"><img src="https://github.com/user-attachments/assets/3f76c281-29e5-4f5f-99b0-7db1b05708c6"></a> | [Shell Is My Orchestrator](shell-is-my-orchestrator/README.md) |
+| <a href="https://youtu.be/zPP5gCp46FM"><img src="https://github.com/user-attachments/assets/66e84e92-a356-41c9-a9cf-cac27a4e78e2"></a> | [Shell Is My Orchestrator](shell-is-my-orchestrator/README.md) |
 | <a href="https://youtu.be/pZO9y72otFg"><img src="https://github.com/user-attachments/assets/a69f4732-e4ff-434f-b837-a9d2b38f8592"></a> | [Weird & Useful CLI Tools You Never Heard Of](weird-and-useful/README.md) |
 | <a href="https://youtu.be/yBgzm6c5e1M"><img src="https://github.com/user-attachments/assets/9d0d63d2-1597-467b-bb41-f7ffaf4aa9f0"></a> | [Is docker compose just a useless toy?](end-to-end-docker-compose/README.md) |
 | <a href="https://youtu.be/Dr0zFRswrwk"><img src="https://github.com/user-attachments/assets/93b2e2d5-4723-4240-a2c4-79319285151e"></a> | [This data processing language is HIDING in plain sight!](awksome/README.md) |
