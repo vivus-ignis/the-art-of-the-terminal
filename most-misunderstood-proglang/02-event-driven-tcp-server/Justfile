@@ -1,0 +1,5 @@
+server:
+  ./tcp_server.tcl
+
+client:
+  telnet localhost 12345

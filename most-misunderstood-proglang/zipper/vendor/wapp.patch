@@ -1,0 +1,11 @@
+--- wapp.tcl.orig	2024-04-07 20:19:33.366755459 +0200
++++ wapp.tcl	2024-04-07 20:19:45.098885018 +0200
+@@ -533,7 +533,7 @@
+   dict set W REQUEST_URI $uri
+   set split_uri [split $uri ?]
+   set uri0 [lindex $split_uri 0]
+-  if {![regexp {^/[-.a-z0-9_/]*$} $uri0]} {
++  if {![regexp {^/[-.a-zA-Z0-9_/]*$} $uri0]} {
+     error "invalid request uri: \"$uri0\""
+   }
+   dict set W PATH_INFO $uri0
