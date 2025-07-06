@@ -1,0 +1,10 @@
+set dotenv-load
+
+start:
+  ./zipper.tcl --server 8080
+
+start-wapp:
+  wapptclsh ./zipper.tcl --server 8080
+
+shell:
+  rlwrap tclsh
