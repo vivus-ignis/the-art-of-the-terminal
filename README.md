@@ -2,6 +2,7 @@
 
 | Clickable Thumbnail | Episode materials |
 |------------|-----------|
+| <a href="https://youtu.be/remIZ_3iIfw"><img src="https://github.com/user-attachments/assets/d8032e85-6890-461a-8c5e-ae59f571ce42"></a> | [EVERYTHING Is Backdoored. By Default.](everything-is-backdoored-by-default/README.md) |
 | <a href="https://youtu.be/zPP5gCp46FM"><img src="https://github.com/user-attachments/assets/ec9ac764-23f3-45e1-909e-984d18d7f8aa"></a> | [The Most MISUNDERSTOOD Programming Language](most-misunderstood-proglang/README.md) |
 | <a href="https://youtu.be/zPP5gCp46FM"><img src="https://github.com/user-attachments/assets/66e84e92-a356-41c9-a9cf-cac27a4e78e2"></a> | [Batch Orchestrators That Work: From Named Pipes to GPU-Powered Containers](shell-is-my-orchestrator/README.md) |
 | <a href="https://youtu.be/pZO9y72otFg"><img src="https://github.com/user-attachments/assets/a69f4732-e4ff-434f-b837-a9d2b38f8592"></a> | [Weird & Useful CLI Tools You Never Heard Of](weird-and-useful/README.md) |
