@@ -28,12 +28,12 @@
     - Ancient versions of Unix https://github.com/felipenlunkes/run-ancient-unix
     - Unix V1 I worked on https://github.com/jserv/unix-v1.git
 
-``bash
+```bash
 # debian trixie is required
 sudo apt install -y libpcre3
 make clean
 make run
-``
+```
 
 - /etc/passwd
     - Which passwords Ken Thompson used on early Unix systems? https://leahneukirchen.org/blog/archive/2019/10/ken-thompson-s-unix-password.html <-- mention this article in github announcement
