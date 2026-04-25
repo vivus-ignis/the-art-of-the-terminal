@@ -2,6 +2,7 @@
 
 | Clickable Thumbnail | Episode materials |
 |------------|-----------|
+| <a href="https://youtu.be/RYyTe7pZ_lY">... | [Shell, fork and zombies](shell-fork-and-zombies) |
 | <a href="https://youtu.be/pfxgLX-MxMY"><img src="https://github.com/user-attachments/assets/48311a2b-2e76-41ab-bdb7-4586d1f54cde"></a> | [Use Local LLMs Already!](use-local-llms-already) |
 | <a href="https://youtu.be/remIZ_3iIfw"><img src="https://github.com/user-attachments/assets/d8032e85-6890-461a-8c5e-ae59f571ce42"></a> | [EVERYTHING Is Backdoored. By Default.](everything-is-backdoored-by-default/README.md) |
 | <a href="https://youtu.be/zPP5gCp46FM"><img src="https://github.com/user-attachments/assets/ec9ac764-23f3-45e1-909e-984d18d7f8aa"></a> | [The Most MISUNDERSTOOD Programming Language](most-misunderstood-proglang/README.md) |
