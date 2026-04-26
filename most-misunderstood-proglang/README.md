@@ -1,5 +1,8 @@
 # The Most Misunderstood Programming Language
 
+## Modern Tcl
+- Comprehensive language tutorial & intro to the modern Tcl (includes topics on modern GUI programming, OOP, single-file deployment, webdev, running on android): https://cgicoffee.com/blog/2026/04/tcl-tk-develop-cross-platform-cli-gui-tools-tutorial-guide
+
 ## Tcl Wiki
 - tons of tcl-related information: https://wiki.tcl-lang.org/ (use search!)
 
