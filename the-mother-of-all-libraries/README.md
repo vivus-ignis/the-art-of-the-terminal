@@ -1,0 +1,29 @@
+- Introduction into ELF format https://www.linuxjournal.com/article/1059
+- Official ELF object file format specification https://gabi.xinuos.com/index.html
+- Testing your code with a non-system glibc without containers https://blogsystem5.substack.com/p/glibc-versions-runtime
+- How dynamic linker works in details https://lwn.net/Articles/961117/
+- System V ABI https://wiki.osdev.org/System_V_ABI
+- Why you should never call ldd on untrusted binaries https://jmmv.dev/2023/07/ldd-untrusted-binaries.html
+- On removal of a.out format from the linux kernel https://lwn.net/Articles/888741/
+- Linux system call table https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
+- System calls on linux https://github.com/0xAX/linux-insides/blob/master/SysCall/linux-syscall-1.md
+- libc from unix v1 is all assembly, just like unix v1 itself https://github.com/jserv/unix-v1/tree/master/src/lib
+- ifunc https://books.google.de/books?id=X-WcBAAAQBAJ&pg=PA226&lpg=PA226&dq=glibc+indirect+function&source=bl&ots=FmF2LrOuRw&sig=IsQDYJjVVjlGJonCdyC9nyacGJQ&hl=en&sa=X&redir_esc=y#v=onepage&q=glibc%20indirect%20function&f=false
+- Symbol versioning
+    -  https://developers.redhat.com/blog/2019/08/01/how-the-gnu-c-library-handles-backward-compatibility
+    - https://howtech.substack.com/p/mastering-symbol-versioning-for-backward
+    - https://konifay.io/blog/2026-0002-glibc-symbol-versioning/
+- This is how you would do system calls without libc https://gist.github.com/Scherso/d11e7de8bd27f234519cfb94348d9c70
+- Libc versions in linux distros tracker https://repology.org/project/glibc/versions
+- Glibc history
+    - https://lwn.net/Articles/488847/
+    - https://blogs.fsfe.org/ciaran/?p=85
+- Another method to build against older glibc versions https://github.com/billziss-gh/glibc-compat
+- NSS modules  (I have not tested them myself)
+    - nss-etcd module https://github.com/ryandoyle/nss-etcd
+    - DNS over HTTPS https://github.com/dimkr/nss-tls
+- looney tunables ld.so vulnerability https://www.qualys.com/2023/10/03/cve-2023-4911/looney-tunables-local-privilege-escalation-glibc-ld-so.txt
+- xz vulnerability & ifunc https://news.ycombinator.com/item?id=39891607
+- Why chainguard picked glibc not musl for their "undistro" https://edu.chainguard.dev/chainguard/chainguard-images/about/images-compiled-programs/glibc-vs-musl
+- More on musl allocator performance https://nickb.dev/blog/default-musl-allocator-considered-harmful-to-performance/
+- Comparison table for libc implementations (musl, uClibc, dietlibc, glibc) https://web.archive.org/web/20260502130510/https://www.etalabs.net/compare_libcs.html
