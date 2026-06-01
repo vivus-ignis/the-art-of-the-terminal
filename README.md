@@ -2,6 +2,7 @@
 
 | Clickable Thumbnail | Episode materials |
 |------------|-----------|
+| <a href="https://youtu.be/E2q0SfBTZ-Q"> <img width="160" height="90" alt="the-mother-of-all-the-libraries-gh" src="https://github.com/user-attachments/assets/317f40c8-7860-45b7-bc9c-ac6ca0452b16" />| [The Mother Of All The Libraries](the-mother-of-all-libraries) |
 | <a href="https://youtu.be/RYyTe7pZ_lY"> <img width="160" height="90" alt="gh-shell-fork-and-zombies-v2" src="https://github.com/user-attachments/assets/7795d6f6-56c0-4e90-95b6-fb70aa5abffb" /></a> | [Shell, fork and zombies: Unix DNA Explained](shell-fork-and-zombies) |
 | <a href="https://youtu.be/pfxgLX-MxMY"><img src="https://github.com/user-attachments/assets/48311a2b-2e76-41ab-bdb7-4586d1f54cde"></a> | [Use Local LLMs Already!](use-local-llms-already) |
 | <a href="https://youtu.be/remIZ_3iIfw"><img src="https://github.com/user-attachments/assets/d8032e85-6890-461a-8c5e-ae59f571ce42"></a> | [EVERYTHING Is Backdoored. By Default.](everything-is-backdoored-by-default/README.md) |
