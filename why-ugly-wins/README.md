@@ -1,0 +1,34 @@
+Why UGLY Always Wins
+--------------------
+
+- 2025 Stack Overflow survey https://survey.stackoverflow.co/2025/technology
+- Python dunder methods https://www.pythonmorsels.com/every-dunder-method/
+- Zen of python https://peps.python.org/pep-0020/
+- Async, colorful functions https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
+- Metaclasses in python https://jfreeman.dev/blog/2020/12/07/python-metaclasses/
+- WTFJS https://github.com/denysdovhan/wtfjs
+- Usage of "unsafe" in rust crates https://rustfoundation.org/media/unsafe-rust-in-the-wild-notes-on-the-current-state-of-unsafe-rust/
+- Maybe a fix for bash quoting hell https://linsomniac.com/post/2026-04-21-shell_quoting_for_bash_wrappers/
+- Windows UI frameworks https://teamdev.com/dotnetbrowser/blog/why-so-many-ui-frameworks-microsoft/
+- Software is a gas https://blog.codinghorror.com/software-its-a-gas/
+- Windows side-by-side assembly https://en.wikipedia.org/wiki/Side-by-side_assembly
+- Coreutils for windows https://github.com/microsoft/coreutils
+- Theo de Raadt about Linux https://www.forbes.com/2005/06/16/linux-bsd-unix-cz_dl_0616theo.html
+- Paper "Rust for Linux: Understanding the Security Impact of Rust in the Linux Kernel" https://par.nsf.gov/servlets/purl/10603953
+- Extremely old code in linux kernel https://lore.kernel.org/lkml/20260410120044.031381086@kernel.org/
+- Minix is probably the most widely used OS https://web.archive.org/web/20230218084731/https://www.cs.vu.nl/~ast/intel/
+- YAML issues https://noyaml.com
+- The YAML document from hell https://ruuda.nl/2023/the-yaml-document-from-hell
+- Common YAML pitfalls https://openformatter.com/blog/yaml-common-pitfalls
+- Neuroscience of beauty https://www.sciencefocus.com/science/the-neuroscience-of-beauty
+- The rise and fall of commercial smalltalk https://wirfs-brock.com/allen/posts/914
+- Smalltalk: the Software Industry's Greatest Failure https://richardkulisz.blogspot.com/2011/02/smalltalk-software-industrys-greatest.html
+- Code written for windows version 1.0 from the 80s works on windows 10 https://www.osnews.com/story/145300/windows-1-0-and-the-winapi-40-years-later/
+- The role of "noise" in biological systems https://www.sciencedirect.com/science/article/abs/pii/S0079610723000020
+- Junk DNA https://www.quantamagazine.org/the-complex-truth-about-junk-dna-20210901/
+- Gobekli Tepe https://www.templeton.org/news/gobekli-tepe
+- Gobekli Tepe was intentionally buried https://gobekli-tepe.com/blog/why-was-gobekli-tepe-buried/
+- Modern lisp, clojure https://clojure.org
+- Modern smalltalk, Pharo https://pharo.org
+- Gleam and the value of small https://www.youtube.com/watch?v=E6_JqYMeNqs
+- Modern BeOS reimplementation https://www.haiku-os.org
