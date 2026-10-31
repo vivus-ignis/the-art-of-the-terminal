@@ -2,6 +2,7 @@
 
 | Clickable Thumbnail | Episode materials |
 |------------|-----------|
+| <a href="https://youtu.be/GfRpPPMYBGQ"><img width="160" height="90" alt="gh-gemini-generated-thumbnail" src="https://github.com/user-attachments/assets/958cc47b-c786-42e7-ac8c-8cdf90b5bcfe" /></a> | [I Want My Code Editor To Be A Casio Watch](bulletproof-vim) |
 | <a href="https://youtu.be/fz-aePDS5bo"><img width="160" height="90" alt="gh-why-ugly-always-wins" src="https://github.com/user-attachments/assets/8a1c5cf3-a203-427a-84e4-13bfa449c23f" /> </a> | [Why UGLY Always Wins](why-ugly-wins) |
 | <a href="https://youtu.be/E2q0SfBTZ-Q"> <img width="160" height="90" alt="the-mother-of-all-the-libraries-gh" src="https://github.com/user-attachments/assets/317f40c8-7860-45b7-bc9c-ac6ca0452b16" /></a>| [The Mother Of All The Libraries](the-mother-of-all-libraries) |
 | <a href="https://youtu.be/RYyTe7pZ_lY"> <img width="160" height="90" alt="gh-shell-fork-and-zombies-v2" src="https://github.com/user-attachments/assets/7795d6f6-56c0-4e90-95b6-fb70aa5abffb" /></a> | [Shell, fork and zombies: Unix DNA Explained](shell-fork-and-zombies) |
