@@ -1,4 +1,4 @@
-## Agentic harness underdog
+## Agentic coding harness underdog
 
 ### Links
 
@@ -9,6 +9,9 @@
 - Are local LLMs good enough? https://www.theregister.com/systems/2026/10/22/ibm-ceo-says-open-weight-models-are-now-irresistibly-good-and-cheap-on-prem/5304640
 - "Concerning" (?) qwen3.8 behavior  https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model
 - 5 qwens beat fable https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve
+- Ollama issues:
+    - https://github.com/ollama/ollama/issues/7606 
+    - https://github.com/ollama/ollama/issues/13235
 
 ### Setting up openshell with TeDDy
 
