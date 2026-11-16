@@ -1,0 +1,34 @@
+id: teddy-ollama
+display_name: TeDDyOllama
+description: TeDDy with Ollama 
+category: inference
+inference_capable: true
+endpoints:
+  - host: YOUR_LOCAL_OLLAMA_INSTANCE_IP
+    port: 11434
+    protocol: rest
+    access: read-write
+    enforcement: enforce
+  - host: openaipublic.blob.core.windows.net
+    port: 443
+    protocol: rest
+    enforcement: enforce
+    access: read-only
+  - host: github.com
+    port: 443
+    protocol: rest
+    enforcement: enforce
+    access: read-only
+  - host: pypi.org
+    port: 443
+    protocol: rest
+    enforcement: enforce
+    access: read-only
+  - host: raw.githubusercontent.com
+    port: 443
+    protocol: rest
+    enforcement: enforce
+    access: read-only
+binaries: 
+  - /usr/local/bin/python3.14
+  - /usr/lib/git-core/git-remote-http

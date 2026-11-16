@@ -1,0 +1,16 @@
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        hooksPath = .githooks
+[branch "master"]
+        rebase = true
+        remote = origin
+        merge = refs/heads/master
+[user]
+        name = User
+        email = user@locallab
+[remote "origin"]
+        url = http://oauth2@YOUR_LOCAL_GITLAB_IP:8282/GROUP/REPO.git
+        fetch = +refs/heads/*:refs/remotes/origin/*

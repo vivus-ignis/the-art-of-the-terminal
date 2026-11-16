@@ -1,0 +1,19 @@
+id: local-gitlab
+display_name: local  gitlab
+description: Gitlab in your local network
+category: source_control
+credentials:
+  - name: api_token
+    description: Gitlab token
+    env_vars: [GL_TOKEN]
+    required: true
+    auth_style: basic
+discovery:
+  credentials: [api_token]
+endpoints:
+  - host: YOUR_LOCAL_GITLAB_IP
+    port: 8282
+    protocol: rest
+    access: read-write
+    enforcement: enforce
+binaries: [/usr/bin/git]
