@@ -61,6 +61,7 @@ openshell sandbox create \
 - load the code into the sandbox
 
 ```bash
+cd ..
 git clone http://YOUR_LOCAL_GITLAB_IP:8282/GROUP/REPO.git
 openshell sandbox upload -v --no-git-ignore teddy-01 .
 openshell sandbox upload -v teddy-01 ../openshell/config .git
